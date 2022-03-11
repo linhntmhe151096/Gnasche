@@ -29,19 +29,19 @@ public class ProductDAO {
             Connection conn = new DBContext().getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-             //   Category category = new Category(rs.getInt(1), rs.getString(2));
-             Product product = Product.builder()
-                     .id(rs.getInt(1))
-                     .name(rs.getString(2))
-                     .quantity(rs.getInt(3))
-                     .price(rs.getDouble(4))
-                     .description(rs.getString(5))
-                     .imageUrl(rs.getString(6))
-                     .createdDate(rs.getString(7))
-                     .categoryId(rs.getInt(8))
-                     .subid(rs.getInt(9)).build();
-                     
+            while (rs.next()) {
+                //   Category category = new Category(rs.getInt(1), rs.getString(2));
+                Product product = Product.builder()
+                        .id(rs.getInt(1))
+                        .name(rs.getString(2))
+                        .quantity(rs.getInt(3))
+                        .price(rs.getDouble(4))
+                        .description(rs.getString(5))
+                        .imageUrl(rs.getString(6))
+                        .createdDate(rs.getString(7))
+                        .categoryId(rs.getInt(8))
+                        .subid(rs.getInt(9)).build();
+
                 listPro.add(product);
             }
         } catch (Exception ex) {
@@ -58,29 +58,53 @@ public class ProductDAO {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, categoryId);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-             //   Category category = new Category(rs.getInt(1), rs.getString(2));
-             Product product = Product.builder()
-                     .id(rs.getInt(1))
-                     .name(rs.getString(2))
-                     .quantity(rs.getInt(3))
-                     .price(rs.getDouble(4))
-                     .description(rs.getString(5))
-                     .imageUrl(rs.getString(6))
-                     .createdDate(rs.getString(7))
-                     .categoryId(rs.getInt(8))
-                     .subid(rs.getInt(9)).build();
+            while (rs.next()) {
+                //   Category category = new Category(rs.getInt(1), rs.getString(2));
+                Product product = Product.builder()
+                        .id(rs.getInt(1))
+                        .name(rs.getString(2))
+                        .quantity(rs.getInt(3))
+                        .price(rs.getDouble(4))
+                        .description(rs.getString(5))
+                        .imageUrl(rs.getString(6))
+                        .createdDate(rs.getString(7))
+                        .categoryId(rs.getInt(8))
+                        .subid(rs.getInt(9)).build();
                 listPro.add(product);
             }
         } catch (Exception ex) {
             Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listPro;
-    
 
     }
 
-    
+    public Product getProductById(int productId) {
 
-       
+        try {
+            String sql = "select * from Product where id = ?";
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, productId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                //   Category category = new Category(rs.getInt(1), rs.getString(2));
+                Product product = Product.builder()
+                        .id(rs.getInt(1))
+                        .name(rs.getString(2))
+                        .quantity(rs.getInt(3))
+                        .price(rs.getDouble(4))
+                        .description(rs.getString(5))
+                        .imageUrl(rs.getString(6))
+                        .createdDate(rs.getString(7))
+                        .categoryId(rs.getInt(8))
+                        .subid(rs.getInt(9)).build();
+                return product;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+
+    }
 }
