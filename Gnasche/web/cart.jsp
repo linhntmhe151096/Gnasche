@@ -180,11 +180,11 @@
                                                     <a href="#!">${C.value.product.name}</a>
                                                 </div>
                                             </td>
-                                            <td class="">$${C.value.product.price}</td>
-                                            <td class="">${C.value.quantity}</td>
+                                            <td class="text-center">$${C.value.product.price}</td>
+                                            <td class="text-center">${C.value.quantity}</td>
                                             <td class="">$${C.value.product.price*C.value.quantity}</td>
 
-                                            <td class="">
+                                            <td class="text-center">
 
                                                 <a class="product-remove bi bi-x-circle" href="delete-cart?productId=${C.value.product.id}"></a>
                                             </td>
@@ -192,6 +192,7 @@
                                     </c:forEach>
                                 </tbody>
                             </table>
+                            <h6>Total Amount: $${totalAmount}</h6>
                             <a href="checkout.html" class="btn btn-dark">Checkout</a>
                         </c:otherwise>
                     </c:choose>                   

@@ -43,6 +43,18 @@ public class CartServlet extends HttpServlet {
             if(carts== null){
                 carts = new LinkedHashMap<>();
             }
+            
+            //total amount
+            
+            double totalAmount  = 0;
+            for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
+                Integer producId = entry.getKey();
+                Cart cart = entry.getValue();
+                
+                totalAmount += cart.getQuantity() * cart.getProduct().getPrice();
+                
+            }
+            request.setAttribute("totalAmount", totalAmount); //gui sang jsp
             request.setAttribute("carts", carts);
             request.getRequestDispatcher("cart.jsp").forward(request, response);
         }
