@@ -62,7 +62,7 @@
                         <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
 
                         <div class="cart">
-                            <a href="orderdetail" class="bi-bag custom-icon"></a>
+                            <a href="cart" class="bi-bag custom-icon"></a>
                             <div class="cart-badge">
                                 <div class="cart-count">${sessionScope.carts.size()}</div>
                             </div>
@@ -108,7 +108,7 @@
                             <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
 
                             <div class="cart">
-                                <a href="orderdetail" class="bi-bag custom-icon"></a>
+                                <a href="cart" class="bi-bag custom-icon"></a>
                                 <div class="cart-badge">
                                     <div class="cart-count">${sessionScope.carts.size()}</div>
                                 </div>

@@ -4,6 +4,7 @@
     Author     : Admin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +65,7 @@
                         <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
 
                         <div class="cart">
-                            <a href="orderdetail" class="bi-bag custom-icon"></a>
+                            <a href="cart" class="bi-bag custom-icon"></a>
                             <div class="cart-badge">
                                 <div class="cart-count">${sessionScope.carts.size()}</div>
                             </div>
@@ -108,7 +109,7 @@
                             <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
 
                             <div class="cart" >
-                                <a href="orderdetail" class="bi-bag custom-icon"></a>
+                                <a href="cart" class="bi-bag custom-icon"></a>
                                 <div class="cart-badge active">
                                     <div class="cart-count">${sessionScope.carts.size()}</div>
                                 </div>
@@ -144,56 +145,37 @@
                             <div class="col-md-8 col-md-offset-2">
                                 <div class="block">
                                     <div class="product-list">
-                                        <form method="post">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="">Item Name</th>
-                                                        <th class="">Item Price</th>
-                                                        <th class="">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
+
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="">Item Name</th>
+                                                    <th class="">Item Price</th>
+                                                    <th class="">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <c:forEach items="${carts}" var="C">
+
                                                     <tr class="">
                                                         <td class="">
                                                             <div class="product-info">
-                                                                <img width="80" src="images/shop/cart/cart-1.jpg" alt="" />
-                                                                <a href="#!">Sunglass</a>
+                                                                <img width="80" src="${C.value.p.imageUrl}" alt="" />
+                                                                <a href="#!">${C.value.p.name}</a>
                                                             </div>
                                                         </td>
-                                                        <td class="">$200.00</td>
+                                                        <td class="">$${C.value.p.price}</td>
                                                         <td class="">
                                                             <a class="product-remove" href="#!">Remove</a>
                                                         </td>
                                                     </tr>
-                                                    <tr class="">
-                                                        <td class="">
-                                                            <div class="product-info">
-                                                                <img width="80" src="images/shop/cart/cart-2.jpg" alt="" />
-                                                                <a href="#!">Airspace</a>
-                                                            </div>
-                                                        </td>
-                                                        <td class="">$200.00</td>
-                                                        <td class="">
-                                                            <a class="product-remove" href="#!">Remove</a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="">
-                                                        <td class="">
-                                                            <div class="product-info">
-                                                                <img width="80" src="images/shop/cart/cart-3.jpg" alt="" />
-                                                                <a href="#!">Bingo</a>
-                                                            </div>
-                                                        </td>
-                                                        <td class="">$200.00</td>
-                                                        <td class="">
-                                                            <a class="product-remove" href="#!">Remove</a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <a href="checkout.html" class="btn btn-main pull-right">Checkout</a>
-                                        </form>
+
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
+                                        <a href="checkout.html" class="btn btn-main pull-right">Checkout</a>
+
                                     </div>
                                 </div>
                             </div>

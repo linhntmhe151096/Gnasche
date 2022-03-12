@@ -45,7 +45,10 @@ public class AddCartServlet extends HttpServlet {
             HttpSession session = request.getSession();
             Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
             if(carts==null){
+                
                 carts = new LinkedHashMap<>();
+                
+                
             }if(carts.containsKey(productId)){//neu sp co tren gio hang
                 int oldQuantity = carts.get(productId).getQuantity();
                 carts.get(productId).setQuantity(oldQuantity+1);
