@@ -15,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Tooplate's Little Fashion - Product Detail</title>
+        <title>Gnasche Furniture</title>
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,11 +43,11 @@
 
     <body>
 
-        <section class="preloader">
-            <div class="spinner">
-                <span class="sk-inner-circle"></span>
-            </div>
-        </section>
+        <!--        <section class="preloader">
+                    <div class="spinner">
+                        <span class="sk-inner-circle"></span>
+                    </div>
+                </section>-->
 
         <main>
 
@@ -134,14 +134,14 @@
 
 
 
-            <header class="site-header section-padding d-flex justify-content-center align-items-center">
+            <header class="site-header section-padding1 d-flex justify-content-center align-items-center">
                 <div class="container">
                     <div class="row">
 
                         <div class="col-lg-10 col-12">
                             <h3>
-                                <span class="d-block text-primary">Cart</span>
-                                <!--                                <span class="d-block text-dark">Fashionable Stuffs</span>-->
+                                <span class="d-block text-primary text-center">Cart</span>
+
                             </h3>
                         </div>
                     </div>
@@ -173,23 +173,44 @@
                                 <tbody>
                                     <c:forEach items="${carts}" var="C">
 
-                                        <tr class="">
-                                            <td class="">
-                                                <div class="product-info">
-                                                    <img width="80" src="${C.value.product.imageUrl}" alt="" />
-                                                    <a href="#!">${C.value.product.name}</a>
+                                    <form action="update-quantity">
+                                        <tr>
+                                        <input type="hidden" name="pId" value="${C.value.product.id}">
+
+                                        <td>
+                                            <div>
+                                                <img width="80" src="${C.value.product.imageUrl}" alt="" />
+                                                <a href="#!">${C.value.product.name}</a>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle">$${C.value.product.price}</td>
+
+                                        <td class="align-middle">
+                                            <div class="input-group quantity mx-auto" style="width: 100px;">
+                                                <div class="">
+                                                    <button class="btn btn-sm btn-minus" >                                                            
+                                                        <i class="bi-dash"></i>                                                                                                                                
+                                                    </button>
                                                 </div>
-                                            </td>
-                                            <td class="text-center">$${C.value.product.price}</td>
-                                            <td class="text-center">${C.value.quantity}</td>
-                                            <td class="">$${C.value.product.price*C.value.quantity}</td>
+                                                <!--                                                    attrib-->
+                                                <input onchange="this.form.submit()"  class="form-control form-control-sm  text-center" name="quantity" value="${C.value.quantity}">
+                                                <div class="">
+                                                    <button class="btn btn-sm btn-plus">
+                                                        <i class="bi-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        </td>
+                                        <td class="align-middle">$${C.value.product.price*C.value.quantity}</td>
 
-                                            <td class="text-center">
+                                        <td class="align-middle">
 
-                                                <a class="product-remove bi bi-x-circle" href="delete-cart?productId=${C.value.product.id}"></a>
-                                            </td>
+                                            <a class=" bi bi-x-circle" href="delete-cart?productId=${C.value.product.id}"></a>
+                                        </td>
                                         </tr>
-                                    </c:forEach>
+                                    </form>
+                                </c:forEach>
                                 </tbody>
                             </table>
                             <h6>Total Amount: $${totalAmount}</h6>
@@ -261,4 +282,12 @@
         <script src="js/custom.js"></script>
 
     </body>
+    <script>
+                                                    function notice(idDelete) {
+                                                        var option = confirm('Do you want delete this product?');
+                                                        if (option === true) {
+                                                            window.location.href = 'delete-cart?productId=' + idDelete;
+                                                        }
+                                                    }
+    </script>
 </html>

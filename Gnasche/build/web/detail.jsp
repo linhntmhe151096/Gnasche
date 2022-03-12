@@ -15,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Tooplate's Little Fashion - Product Detail</title>
+        <title>Gnasche Furniture - Detail</title>
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,25 +178,14 @@
                             <div class="product-cart-thumb row">
                                 <div class="col-lg-6 col-12">
 
-                                    <select class="form-select cart-form-select" id="inputGroupSelect01">
-                                        <option selected>Quantity</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+
+                                    <a href="cart" class="btn custom-btn cart-btn">BUY NOW</a>
                                 </div>
 
                                 <div class="col-lg-6 col-12 mt-4 mt-lg-0">
-                                    <button type="submit" class="btn custom-btn cart-btn" data-bs-toggle="modal" data-bs-target="#cart-modal">Add to Cart</button>
+                                    <a href="add-to-cart?productId=${p.id}" class="btn custom-btn cart-btn ms-lg-2" >Add to Cart</a>
                                 </div>
-
-                                <p>
-                                    <a href="#" class="product-additional-link">Details</a>
-
-                                    <a href="#" class="product-additional-link">Delivery and Payment</a>
-                                </p>
+                               
                             </div>
 
                         </div>
@@ -341,48 +330,7 @@
             </div>
         </footer>
 
-        <!-- CART MODAL -->
-        <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content border-0">
-                    <div class="modal-header flex-column">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-6 col-12 mt-4 mt-lg-0">
-                                <img src="${p.imageUrl}" class="img-fluid product-image" alt="">
-                            </div>
-
-                            <div class="col-lg-6 col-12 mt-3 mt-lg-0">
-                                <h3 class="modal-title" id="exampleModalLabel">${p.name}</h3>
-
-                                <p class="product-price text-muted mt-3">$${p.price}</p>
-
-                                <!--                                <p class="product-p">Quatity: <span class="ms-1">4</span></p>
-                                
-                                                                <p class="product-p">Colour: <span class="ms-1">Black</span></p>
-                                
-                                                                <p class="product-p pb-3">Size: <span class="ms-1">S/S</span></p>-->
-
-                                <!--                                <div class="border-top mt-4 pt-3">
-                                                                    <p class="product-p"><strong>Total: <span class="ms-1">$100</span></strong></p>
-                                                                </div>-->
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="row w-50">
-                            <button type="button" class="btn custom-btn cart-btn ms-lg-4">Checkout</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        
 
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>

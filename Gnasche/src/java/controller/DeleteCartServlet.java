@@ -49,7 +49,7 @@ public class DeleteCartServlet extends HttpServlet {
             if(carts.containsKey(productId)){
                 carts.remove(productId);
             }
-
+           
             session.setAttribute("carts", carts); //update lai ses cart
             response.sendRedirect("cart"); //xoa xong ve trang list cart
         }
