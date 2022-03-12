@@ -4,6 +4,7 @@
     Author     : Admin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +65,14 @@
                         <div class="cart">
                             <a href="cart" class="bi-bag custom-icon"></a>
                             <div class="cart-badge">
-                                <div class="cart-count">${sessionScope.carts.size()}</div>
+                                <c:choose>
+                                    <c:when test="${sessionScope.carts == null}">
+                                        <div class="cart-count">0</div>                                    
+                                    </c:when>
+                                    <c:otherwise>                                
+                                        <div class="cart-count">${sessionScope.carts.size()}</div>
+                                    </c:otherwise>
+                                </c:choose>F
                             </div>
                         </div>
                     </div>
@@ -110,7 +118,14 @@
                             <div class="cart">
                                 <a href="cart" class="bi-bag custom-icon"></a>
                                 <div class="cart-badge">
-                                    <div class="cart-count">${sessionScope.carts.size()}</div>
+                                    <c:choose>
+                                        <c:when test="${sessionScope.carts == null}">
+                                            <div class="cart-count">0</div>                                    
+                                        </c:when>
+                                        <c:otherwise>                                
+                                            <div class="cart-count">${sessionScope.carts.size()}</div>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </div>
                             </div>
                         </div>

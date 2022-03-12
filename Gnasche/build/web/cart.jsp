@@ -67,7 +67,14 @@
                         <div class="cart">
                             <a href="cart" class="bi-bag custom-icon"></a>
                             <div class="cart-badge">
-                                <div class="cart-count">${sessionScope.carts.size()}</div>
+                                <c:choose>
+                                    <c:when test="${sessionScope.carts == null}">
+                                        <div class="cart-count">0</div>                                    
+                                    </c:when>
+                                    <c:otherwise>                                
+                                        <div class="cart-count">${sessionScope.carts.size()}</div>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                         </div>
                     </div>
@@ -101,8 +108,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="category?categoryId=5">Outdoor</a>
                             </li>
-
-
                         </ul>
 
                         <div class=" header-option">
@@ -111,7 +116,14 @@
                             <div class="cart" >
                                 <a href="cart" class="bi-bag custom-icon"></a>
                                 <div class="cart-badge active">
-                                    <div class="cart-count">${sessionScope.carts.size()}</div>
+                                    <c:choose>
+                                        <c:when test="${sessionScope.carts == null}">
+                                            <div class="cart-count">0</div>                                    
+                                        </c:when>
+                                        <c:otherwise>                                
+                                            <div class="cart-count">${sessionScope.carts.size()}</div>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </div>
                             </div>
                         </div>
@@ -127,10 +139,10 @@
                     <div class="row">
 
                         <div class="col-lg-10 col-12">
-                            <h1>
-                                <span class="d-block text-primary">We provide you</span>
-                                <span class="d-block text-dark">Fashionable Stuffs</span>
-                            </h1>
+                            <h3>
+                                <span class="d-block text-primary">Cart</span>
+                                <!--                                <span class="d-block text-dark">Fashionable Stuffs</span>-->
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -138,59 +150,55 @@
 
 
 
-            <div class="page-wrapper">
-                <div class="cart shopping">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                                <div class="block">
-                                    <div class="product-list">
 
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th class="">Item Name</th>
-                                                    <th class="">Item Price</th>
-                                                    <th class="">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
 
-                                                <c:forEach items="${carts}" var="C">
 
-                                                    <tr class="">
-                                                        <td class="">
-                                                            <div class="product-info">
-                                                                <img width="80" src="${C.value.p.imageUrl}" alt="" />
-                                                                <a href="#!">${C.value.p.name}</a>
-                                                            </div>
-                                                        </td>
-                                                        <td class="">$${C.value.p.price}</td>
-                                                        <td class="">
-                                                            <a class="product-remove" href="#!">Remove</a>
-                                                        </td>
-                                                    </tr>
+            <div class="container">
+                <div class="row">
+                    <c:choose>
+                        <c:when test="${sessionScope.carts.size()==0|| sessionScope.carts==null}">
+                            <h6 class="text-center"><br><br>Don't have any product in your cart.</h6>
+                            </c:when>
+                            <c:otherwise >
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="">Item Name</th>
+                                        <th class="">Item Price</th>
+                                        <th class="">Quantity</th>
+                                        <th class="">Total price</th>                                                   
+                                        <th class=""></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${carts}" var="C">
 
-                                                </c:forEach>
-                                            </tbody>
-                                        </table>
-                                        <a href="checkout.html" class="btn btn-main pull-right">Checkout</a>
+                                        <tr class="">
+                                            <td class="">
+                                                <div class="product-info">
+                                                    <img width="80" src="${C.value.product.imageUrl}" alt="" />
+                                                    <a href="#!">${C.value.product.name}</a>
+                                                </div>
+                                            </td>
+                                            <td class="">$${C.value.product.price}</td>
+                                            <td class="">${C.value.quantity}</td>
+                                            <td class="">$${C.value.product.price*C.value.quantity}</td>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                            <td class="">
+
+                                                <a class="product-remove bi bi-x-circle" href="delete-cart?productId=${C.value.product.id}"></a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                            <a href="checkout.html" class="btn btn-dark">Checkout</a>
+                        </c:otherwise>
+                    </c:choose>                   
                 </div>
             </div>
-
         </main>
-
-
-
-
-
-
+        <br><br>
 
 
 
@@ -241,48 +249,7 @@
             </div>
         </footer>
 
-        <!-- CART MODAL -->
-        <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content border-0">
-                    <div class="modal-header flex-column">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
 
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-6 col-12 mt-4 mt-lg-0">
-                                <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
-                            </div>
-
-                            <div class="col-lg-6 col-12 mt-3 mt-lg-0">
-                                <h3 class="modal-title" id="exampleModalLabel">Tree pot</h3>
-
-                                <p class="product-price text-muted mt-3">$25</p>
-
-                                <p class="product-p">Quatity: <span class="ms-1">4</span></p>
-
-                                <p class="product-p">Colour: <span class="ms-1">Black</span></p>
-
-                                <p class="product-p pb-3">Size: <span class="ms-1">S/S</span></p>
-
-                                <div class="border-top mt-4 pt-3">
-                                    <p class="product-p"><strong>Total: <span class="ms-1">$100</span></strong></p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <div class="row w-50">
-                            <button type="button" class="btn custom-btn cart-btn ms-lg-4">Checkout</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>

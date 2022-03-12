@@ -65,10 +65,19 @@
                         <div class="cart">
                             <a href="cart" class="bi-bag custom-icon"></a>
                             <div class="cart-badge">
-                                <div class="cart-count">${sessionScope.carts.size()}</div>
+                                <c:choose>
+                                    <c:when test="${sessionScope.carts == null}">
+                                        <div class="cart-count">0</div>                                    
+                                    </c:when>
+                                    <c:otherwise>                                
+                                        <div class="cart-count">${sessionScope.carts.size()}</div>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                         </div>
                     </div>
+
+
 
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
@@ -104,7 +113,14 @@
                             <div class="cart">
                                 <a href="cart" class="bi-bag custom-icon"></a>
                                 <div class="cart-badge">
-                                    <div class="cart-count">${sessionScope.carts.size()}</div>
+                                    <c:choose>
+                                        <c:when test="${sessionScope.carts == null}">
+                                            <div class="cart-count">0</div>                                    
+                                        </c:when>
+                                        <c:otherwise>                                
+                                            <div class="cart-count">${sessionScope.carts.size()}</div>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </div>
                             </div>
                         </div>

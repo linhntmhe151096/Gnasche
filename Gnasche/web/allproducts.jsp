@@ -69,7 +69,14 @@
                             <div class="cart">
                                 <a href="cart" class="bi-bag custom-icon"></a>
                                 <div class="cart-badge">
-                                    <div class="cart-count">${sessionScope.carts.size()}</div>
+                                    <c:choose>
+                                        <c:when test="${sessionScope.carts == null}">
+                                            <div class="cart-count">0</div>                                    
+                                        </c:when>
+                                        <c:otherwise>                                
+                                            <div class="cart-count">${sessionScope.carts.size()}</div>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +131,14 @@
                                 <div class="cart">
                                     <a href="cart" class="bi-bag custom-icon"></a>
                                     <div class="cart-badge">
-                                        <div class="cart-count">${sessionScope.carts.size()}</div>
+                                        <c:choose>
+                                            <c:when test="${sessionScope.carts == null}">
+                                                <div class="cart-count">0</div>                                    
+                                            </c:when>
+                                            <c:otherwise>                                
+                                                <div class="cart-count">${sessionScope.carts.size()}</div>
+                                            </c:otherwise>
+                                        </c:choose>
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +180,7 @@
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex justify-content-between bg-light border">
-                                     <a href="detail?productId=${Pro.id}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        <a href="detail?productId=${Pro.id}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                                         <a href="add-to-cart?productId=${Pro.id}" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                                     </div>
                                 </div>

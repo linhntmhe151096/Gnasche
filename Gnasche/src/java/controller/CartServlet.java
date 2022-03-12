@@ -44,7 +44,7 @@ public class CartServlet extends HttpServlet {
                 carts = new LinkedHashMap<>();
             }
             request.setAttribute("carts", carts);
-            request.getRequestDispatcher("cartt.jsp");
+            request.getRequestDispatcher("cart.jsp").forward(request, response);
         }
     }
 
