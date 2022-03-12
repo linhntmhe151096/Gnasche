@@ -38,6 +38,7 @@ public class TypeOfCategoryServlet extends HttpServlet {
             int categoryId = Integer.parseInt(request.getParameter("categoryId"));
             List<Product> listProducts = new ProductDAO().getProductByCategoryId(categoryId);
             request.setAttribute("listProducts", listProducts);
+            request.setAttribute("tag", categoryId);
             request.getRequestDispatcher("allproducts.jsp").forward(request, response);
         }
     }

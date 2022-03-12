@@ -38,6 +38,8 @@ public class HomeServlet extends HttpServlet {
         
 //        List<Category> listCategory = new CategoryDAO().getAllCategory();
 //        request.setAttribute("listCategory", listCategory);
+
+        
         request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 

@@ -59,46 +59,54 @@
                         <strong><img src="images/header/2.jpg" alt="" width="40px" height="auto"> <span>Gnasche</span></strong>
                     </a>
 
-                    <div class="d-lg-none">
+                    <div class="d-lg-none header-option">
                         <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
 
-                        <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                        <div class="cart">
+                            <a href="orderdetail" class="bi-bag custom-icon"></a>
+                            <div class="cart-badge">
+                                <div class="cart-count">${sessionScope.carts.size()}</div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
                                 <a class="nav-link active" href="home">Home</a>
-                                
                             </li>
-                            
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="shop">Shop</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="category?categoryId=1">Living room</a>
                             </li>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="category?categoryId=2">Bedroom</a>
                             </li>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="category?categoryId=3">Kitchen & Dinning</a>
                             </li>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="category?categoryId=4">Rugs & Decor</a>
                             </li>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="category?categoryId=5">Outdoor</a>
                             </li>
-                            
+                        </ul>
 
-                       </ul>
 
-                        <div class="d-none d-lg-block">
+                        <div class="header-option">
                             <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
 
-                            <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                            <div class="cart">
+                                <a href="orderdetail" class="bi-bag custom-icon"></a>
+                                <div class="cart-badge">
+                                    <div class="cart-count">${sessionScope.carts.size()}</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -179,7 +187,7 @@
 
 
                                                 <div class="img has-hover img_first_left x md-x lg-x y md-y lg-y" id="image_2090707319">
-                                                    <a href="beta.nhaxinh.com/phong-khach/">						
+                                                    <a href="">						
                                                         <div class="img-inner image-zoom dark">
                                                             <img width="970" height="640" class="attachment-large size-large lazy-load-active" alt="" src="https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122.jpg" data-src="https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122.jpg" sizes="(max-width: 970px) 100vw, 970px" data-srcset="https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122.jpg 970w, https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122-606x400.jpg 606w, https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122-768x507.jpg 768w, https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122-300x198.jpg 300w, https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122-600x396.jpg 600w" srcset="https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122.jpg 970w, https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122-606x400.jpg 606w, https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122-768x507.jpg 768w, https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122-300x198.jpg 300w, https://nhaxinh.com/wp-content/uploads/2022/01/banner-phong-khach-nha-xinh-chinh-25122-600x396.jpg 600w">						
                                                         </div>
@@ -187,7 +195,7 @@
                                                     <style>
                                                         #image_2090707319 {
                                                             width: 100%;
-                                                            
+
                                                         }
                                                     </style>
                                                 </div>
@@ -199,7 +207,7 @@
                                                     <div class="ct_design">
                                                         <h2>Living room</h2>
                                                         <p>The living room is the main space of the house, a place for family gatherings.</p>
-                                                        <p><a href="https://nhaxinh.com/phong-khach/">&nbsp;Designs <i class="fal fa-arrow-right"></i></a></p>
+                                                        <p><a href="category?categoryId=1">&nbsp;Designs <i class="fal fa-arrow-right"></i></a></p>
                                                     </div>
                                                 </div>		
                                             </div>				

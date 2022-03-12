@@ -63,43 +63,70 @@
                             <strong><img src="images/header/2.jpg" alt="" width="40px" height="auto"> <span>Gnasche</span></strong>
                         </a>
 
-                        <div class="d-lg-none">
+                        <div class="d-lg-none header-option">
                             <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
-                            <a href="product-detail.html" class="bi-bag custom-icon"></a>
+
+                            <div class="cart">
+                                <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                                <div class="cart-badge">
+                                    <div class="cart-count">${sessionScope.carts.size()}</div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
                                     <a class="nav-link" href="home">Home</a>
-
                                 </li>
+
 
                                 <li class="nav-item">
-                                    <a class="nav-link " href="category?categoryId=1">Living room</a>
+                                    <a class="nav-link active" href="shop">Shop</a>
                                 </li>
-
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category?categoryId=2">Bedroom</a>
+                                    <a class="nav-link active" href="category?categoryId=1">Living room</a>
                                 </li>
-
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category?categoryId=3">Kitchen & Dinning</a>
+                                    <a class="nav-link active" href="category?categoryId=2">Bedroom</a>
                                 </li>
-
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category?categoryId=4">Rugs & Decor</a>
+                                    <a class="nav-link active" href="category?categoryId=3">Kitchen & Dinning</a>
                                 </li>
-
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category?categoryId=5">Outdoor</a>
+                                    <a class="nav-link active" href="category?categoryId=4">Rugs & Decor</a>
                                 </li>
-
-
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="category?categoryId=5">Outdoor</a>
+                                </li>
                             </ul>
-                            <div class="d-none d-lg-block">
+
+
+                            <!--                            <li class="nav-item dropdown">
+                                                            <a href="shop" class="nav-link active dropdown-toggle" id="navbarDarkDropdownMenuLink"  data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Shop
+                                                            </a>
+                                                            <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                                                <li><a class="dropdown-item" href="category?categoryId=1">Living room</a></li>
+                                                                <li><a class="dropdown-item" href="category?categoryId=2">Bedroom</a></li>
+                                                                <li><a class="dropdown-item" href="category?categoryId=3">Kitchen & Dinning</a></li>
+                                                                <li><a class="dropdown-item" href="category?categoryId=4">Rugs & Decor</a></li>
+                                                                <li><a class="dropdown-item" href="category?categoryId=5">Outdoor</a></li>
+                                                            </ul>      
+                                                        </li>-->
+
+
+
+
+                            <div class=" header-option">
                                 <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
-                                <a href="product-detail.html" class="bi-bag custom-icon"></a>
+
+                                <div class="cart">
+                                    <a href="" class="bi-bag custom-icon"></a>
+                                    <div class="cart-badge">
+                                        <div class="cart-count">${sessionScope.carts.size()}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -139,8 +166,8 @@
                                         </div>
                                     </div>
                                     <div class="card-footer d-flex justify-content-between bg-light border">
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                     <a href="detail?productId=${Pro.id}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                        <a href="add-to-cart?productId=${Pro.id}" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                                     </div>
                                 </div>
                             </div>

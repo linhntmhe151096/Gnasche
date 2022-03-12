@@ -29,15 +29,15 @@
         <link rel="stylesheet" href="css/slick.css"/>
 
         <link href="css/tooplate-little-fashion.css" rel="stylesheet">
-<!--
-
-Tooplate 2127 Little Fashion
-
-https://www.tooplate.com/view/2127-little-fashion
-
--->
+        <!--
+        
+        Tooplate 2127 Little Fashion
+        
+        https://www.tooplate.com/view/2127-little-fashion
+        
+        -->
     </head>
-    
+
     <body>
 
         <section class="preloader">
@@ -45,7 +45,7 @@ https://www.tooplate.com/view/2127-little-fashion
                 <span class="sk-inner-circle"></span>
             </div>
         </section>
-    
+
         <main>
 
             <nav class="navbar navbar-expand-lg">
@@ -58,19 +58,28 @@ https://www.tooplate.com/view/2127-little-fashion
                         <strong><img src="images/header/2.jpg" alt="" width="40px" height="auto"> <span>Gnasche</span></strong>
                     </a>
 
-                    <div class="d-lg-none">
+                    <div class="d-lg-none header-option">
                         <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
 
-                        <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                        <div class="cart">
+                            <a href="orderdetail" class="bi-bag custom-icon"></a>
+                            <div class="cart-badge">
+                                <div class="cart-count">${sessionScope.carts.size()}</div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" href="home">Home</a>
-                                
+                                <a class="nav-link" href="home">Home</a>
+
                             </li>
-                            
+                            <li class="nav-item">
+                                <a class="nav-link " href="home">Shop</a>
+
+                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="category?categoryId=1">Living room</a>
                             </li>
@@ -90,14 +99,20 @@ https://www.tooplate.com/view/2127-little-fashion
                             <li class="nav-item">
                                 <a class="nav-link" href="category?categoryId=5">Outdoor</a>
                             </li>
-                            
 
-                       </ul>
 
-                        <div class="d-none d-lg-block">
+                        </ul>
+
+
+                        <div class="header-option">
                             <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
 
-                            <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                            <div class="cart">
+                                <a href="orderdetail" class="bi-bag custom-icon"></a>
+                                <div class="cart-badge">
+                                    <div class="cart-count">${sessionScope.carts.size()}</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,7 +147,7 @@ https://www.tooplate.com/view/2127-little-fashion
                                 <div>
                                     <h2 class="product-title mb-0">${p.name}</h2>
 
-                                    
+
                                 </div>
 
                                 <small class="product-price text-muted ms-auto mt-auto mb-5">$${p.price}</small>
@@ -147,7 +162,7 @@ https://www.tooplate.com/view/2127-little-fashion
 
                             <div class="product-cart-thumb row">
                                 <div class="col-lg-6 col-12">
-                                    
+
                                     <select class="form-select cart-form-select" id="inputGroupSelect01">
                                         <option selected>Quantity</option>
                                         <option value="1">1</option>
@@ -322,23 +337,23 @@ https://www.tooplate.com/view/2127-little-fashion
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-6 col-12 mt-4 mt-lg-0">
-                                <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
+                                <img src="${p.imageUrl}" class="img-fluid product-image" alt="">
                             </div>
 
                             <div class="col-lg-6 col-12 mt-3 mt-lg-0">
-                                <h3 class="modal-title" id="exampleModalLabel">Tree pot</h3>
+                                <h3 class="modal-title" id="exampleModalLabel">${p.name}</h3>
 
-                                <p class="product-price text-muted mt-3">$25</p>
+                                <p class="product-price text-muted mt-3">$${p.price}</p>
 
-                                <p class="product-p">Quatity: <span class="ms-1">4</span></p>
+                                <!--                                <p class="product-p">Quatity: <span class="ms-1">4</span></p>
+                                
+                                                                <p class="product-p">Colour: <span class="ms-1">Black</span></p>
+                                
+                                                                <p class="product-p pb-3">Size: <span class="ms-1">S/S</span></p>-->
 
-                                <p class="product-p">Colour: <span class="ms-1">Black</span></p>
-
-                                <p class="product-p pb-3">Size: <span class="ms-1">S/S</span></p>
-
-                                <div class="border-top mt-4 pt-3">
-                                    <p class="product-p"><strong>Total: <span class="ms-1">$100</span></strong></p>
-                                </div>
+                                <!--                                <div class="border-top mt-4 pt-3">
+                                                                    <p class="product-p"><strong>Total: <span class="ms-1">$100</span></strong></p>
+                                                                </div>-->
 
                             </div>
                         </div>
