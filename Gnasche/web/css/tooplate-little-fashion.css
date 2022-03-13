@@ -33,6 +33,12 @@ https://www.tooplate.com/view/2127-little-fashion
     --font-weight-black:          900;
 }
 
+/*cònfirm*/
+.page-wrapper {
+  padding: 70px 0;
+}
+
+
 /* check out */
 
 .product-checkout-details .product-card > a {

@@ -5,6 +5,8 @@
  */
 package controller;
 
+import DAO.OrderDAO;
+import DAO.OrderDetailDAO;
 import DAO.ShippingDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Cart;
+import model.Order;
 import model.Shipping;
 
 /**
@@ -42,23 +45,22 @@ public class CheckoutServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession();
             Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
-            if(carts== null){
+            if (carts == null) {
                 carts = new LinkedHashMap<>();
             }
-            
+
             //total amount tinh lai
-            
-            double totalAmount  = 0;
+            double totalAmount = 0;
             for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
                 Integer producId = entry.getKey();
                 Cart cart = entry.getValue();
-                
+
                 totalAmount += cart.getQuantity() * cart.getProduct().getPrice();
-                
+
             }
             request.setAttribute("totalAmount", totalAmount); //gui sang jsp
             request.setAttribute("carts", carts);
-            
+
             request.getRequestDispatcher("checkout.jsp").forward(request, response);
         }
     }
@@ -93,19 +95,56 @@ public class CheckoutServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
         String note = request.getParameter("note");
-        
+
         //Luu tt vao database
-        
-        
-        //luu shipping
+        //luu don hang vao shipping
         Shipping shipping = Shipping.builder()
                 .name(name)
                 .phone(phone)
                 .address(address)
                 .build();
+
+        int shippingId = new ShippingDAO().createdReturnId(shipping);//return id tu tang cua ban ghi vua lua vao database
+
+        //Luu don hang vao order
+        HttpSession session = request.getSession();
+        Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
+        if (carts == null) {
+            carts = new LinkedHashMap<>();
+        }
+
+        //total amount
+        double totalAmount = 0;
+        for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
+            Integer producId = entry.getKey();
+            Cart cart = entry.getValue();
+
+            totalAmount += cart.getQuantity() * cart.getProduct().getPrice();
+
+        }
+
+        Order order = Order.builder()
+                .accountId(1)
+                .totalPrice(totalAmount)
+                .note(note)
+                .shippingId(shippingId)
+                .build();
+        //lay id cua order
+        int orderId = new OrderDAO().createdReturnId(order);
         
-       
-                
+        
+        //Luu don hang vao order detail
+        
+        new OrderDetailDAO().saveCart(orderId, carts);
+        
+        //Dat hang xong reset cart
+        session.removeAttribute("carts");
+        
+        //thanh toan xong
+        response.sendRedirect("confirmation");
+        
+        
+               
       
         
     }

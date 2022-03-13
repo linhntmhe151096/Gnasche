@@ -159,7 +159,7 @@
                                 <input type="text" class="form-control" id="note" name="note" value="">
                             </div>
 
-                            <a href="" class="btn btn-dark mt-20">Place Order</a >
+                            <button type="submit" class="btn btn-dark mt-20">Place Order</button>
                         </form>
                     </div>
 
