@@ -5,10 +5,19 @@
  */
 package model;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 /**
  *
  * @author Admin
  */
+@Builder
+@Getter
+@Setter
+@ToString
 public class OrderDetail {
      private int id;
      private int orderId;

@@ -130,6 +130,7 @@ https://www.tooplate.com/view/2127-little-fashion
 
 .cart {
     position: relative;
+    padding-right: 20px;
 }
 
 .cart-badge {
@@ -140,6 +141,7 @@ https://www.tooplate.com/view/2127-little-fashion
     border-radius: 50%;
     top: 1px;
     right: -6px;
+    margin-right: 20px;
 }
 
 .cart-count {
