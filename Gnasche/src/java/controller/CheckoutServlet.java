@@ -5,13 +5,19 @@
  */
 package controller;
 
+import DAO.ShippingDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.Cart;
+import model.Shipping;
 
 /**
  *
@@ -34,6 +40,25 @@ public class CheckoutServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            HttpSession session = request.getSession();
+            Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
+            if(carts== null){
+                carts = new LinkedHashMap<>();
+            }
+            
+            //total amount tinh lai
+            
+            double totalAmount  = 0;
+            for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
+                Integer producId = entry.getKey();
+                Cart cart = entry.getValue();
+                
+                totalAmount += cart.getQuantity() * cart.getProduct().getPrice();
+                
+            }
+            request.setAttribute("totalAmount", totalAmount); //gui sang jsp
+            request.setAttribute("carts", carts);
+            
             request.getRequestDispatcher("checkout.jsp").forward(request, response);
         }
     }
@@ -64,7 +89,25 @@ public class CheckoutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        String note = request.getParameter("note");
+        
+        //Luu tt vao database
+        
+        
+        //luu shipping
+        Shipping shipping = Shipping.builder()
+                .name(name)
+                .phone(phone)
+                .address(address)
+                .build();
+        
+       
+                
+      
+        
     }
 
     /**

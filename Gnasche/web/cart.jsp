@@ -214,7 +214,7 @@
                                 </tbody>
                             </table>
                             <h6>Total Amount: $${totalAmount}</h6>
-                            <a href="checkout.html" class="btn btn-dark">Checkout</a>
+                            <a href="checkout" class="btn btn-dark">Checkout</a>
                         </c:otherwise>
                     </c:choose>                   
                 </div>
