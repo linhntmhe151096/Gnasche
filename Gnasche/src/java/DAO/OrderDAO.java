@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Order;
@@ -50,5 +52,35 @@ public class OrderDAO {
         return 0;
 
     }
+
+    public List<Order> getAllOrder() {
+        List<Order> listOrder = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM orders ";
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                Order order = Order.builder()
+                        .id(rs.getInt(1))
+                        .accountId(rs.getInt(2))
+                        .totalPrice(rs.getDouble(3))
+                        .note(rs.getString(4))
+                        .createdDate(rs.getString(5))
+                        .shippingId(rs.getInt(6)).build();
+                listOrder.add(order);
+
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listOrder;
+    }
+
+    
+
+        
 
 }

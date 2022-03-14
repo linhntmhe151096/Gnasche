@@ -61,7 +61,7 @@
                                 <div class="col-lg-6 col-10">
                                     <h1 class="slick-title">Cool Fashion</h1>
 
-                                    <p class="lead text-white mt-lg-3 mb-lg-5">Little fashion template comes with total 8 HTML pages provided by Tooplate website.</p>
+                                    <p class="lead text-white mt-lg-3 mb-lg-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
                                     <a href="about.html" class="btn custom-btn">Learn more about us</a>
                                 </div>
@@ -79,7 +79,7 @@
                                 <div class="col-lg-6 col-10">
                                     <h1 class="slick-title">New Design</h1>
 
-                                    <p class="lead text-white mt-lg-3 mb-lg-5">Please share this Little Fashion template to your friends. Thank you for supporting us.</p>
+                                    <p class="lead text-white mt-lg-3 mb-lg-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, sed.</p>
 
                                     <a href="product.html" class="btn custom-btn">Explore products</a>
                                 </div>
@@ -97,7 +97,7 @@
                                 <div class="col-lg-6 col-10">
                                     <h1 class="slick-title">Talk to us</h1>
 
-                                    <p class="lead text-white mt-lg-3 mb-lg-5">Tooplate is one of the best HTML CSS template websites for everyone.</p>
+                                    <p class="lead text-white mt-lg-3 mb-lg-5">Gnasche is one of the best choice for everyone.</p>
 
                                     <a href="contact.html" class="btn custom-btn">Work with us</a>
                                 </div>
@@ -420,52 +420,7 @@
 
 
 
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-10 me-auto mb-4">
-                        <h4 class="text-white mb-3"><a href="index.html">Little</a> Fashion</h4>
-                        <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2022 <strong>Little Fashion</strong></p>
-                        <br>
-                        <p class="copyright-text">Designed by <a href="https://www.tooplate.com/" target="_blank">Tooplate</a></p>
-                    </div>
-
-                    <div class="col-lg-5 col-8">
-                        <h5 class="text-white mb-3">Sitemap</h5>
-
-                        <ul class="footer-menu d-flex flex-wrap">
-                            <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">Story</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Products</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">FAQs</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-4">
-                        <h5 class="text-white mb-3">Social</h5>
-
-                        <ul class="social-icon">
-
-                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-skype"></a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
-
+            <%@include file="compo/footer.jsp" %>
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>

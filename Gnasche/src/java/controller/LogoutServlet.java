@@ -44,7 +44,7 @@ public class LogoutServlet extends HttpServlet {
             String password = null;
             for (Cookie cooky : cookies) {
                 if (cooky.getName().equals("username")) {
-                    cooky.setMaxAge(0);
+                    cooky.setMaxAge(0);//set lai time ton tai
                     response.addCookie(cooky);
                 } else if (cooky.getName().equals("password")) {
                     cooky.setMaxAge(0);

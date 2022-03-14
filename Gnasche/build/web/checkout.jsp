@@ -37,7 +37,7 @@
     <body>
         <main>
 
-           <%@include file="compo/nav.jsp" %>
+            <%@include file="compo/nav.jsp" %>
 
 
             <header class="site-header section-padding1 d-flex justify-content-center align-items-center">
@@ -63,15 +63,15 @@
                         <form class="checkout-form" action="checkout" method="post">
                             <div class="form-group">
                                 <label for="name">Full Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address" name="address" placeholder="">
+                                <input type="text" class="form-control" id="address" name="address" placeholder="" required>
                             </div>
 
                             <div class="form-group" >
@@ -114,5 +114,6 @@
             </div>
 
         </main>
+        <%@include file="compo/footer.jsp" %>
     </body>
 </html>

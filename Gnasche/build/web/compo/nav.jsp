@@ -4,6 +4,7 @@
     Author     : Admin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <nav class="navbar navbar-expand-lg">
@@ -17,16 +18,15 @@
                     </a>
 
                     <div class="d-lg-none header-option">
-
                         <div class="cart">
                             <a href="cart" class="bi-bag custom-icon"></a>
                             <div class="cart-badge">
                                 <c:choose>
                                     <c:when test="${sessionScope.carts == null}">
-                                        <div class="cart-count">0</div>                                    
+                                        <div class="cart-count" >0</div>                                    
                                     </c:when>
                                     <c:otherwise>                                
-                                        <div class="cart-count">${sessionScope.carts.size()}</div>
+                                        <div class="cart-count" id="">${sessionScope.carts.size()}</div>
                                     </c:otherwise>
                                 </c:choose>
                             </div>
@@ -52,7 +52,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" href="home">Home</a>
+                                <a class="nav-link" href="home">Home</a>
                             </li>
 
 
@@ -87,7 +87,7 @@
                                             <div class="cart-count">0</div>                                    
                                         </c:when>
                                         <c:otherwise>                                
-                                            <div class="cart-count">${sessionScope.carts.size()}</div>
+                                            <div class="cart-count" id="cart_number">${sessionScope.carts.size()}</div>
                                         </c:otherwise>
                                     </c:choose>
                                 </div>

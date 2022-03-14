@@ -12,11 +12,11 @@ https://www.tooplate.com/view/2127-little-fashion
 -----------------------------------------*/
 :root {
     --white-color:                #FFFFFF;
-    --primary-color:             #000000;
+    --primary-color:              #000000;
     --section-bg-color:           #f0f8ff;
     --dark-color:                 #000000;
     --grey-color:                 #d0d1d1;
-    --p-color:                    #717275;
+    --p-color:                    #000000;
 
     --body-font-family:           'Inter', sans-serif;
 
@@ -35,76 +35,76 @@ https://www.tooplate.com/view/2127-little-fashion
 
 /*cònfirm*/
 .page-wrapper {
-  padding: 70px 0;
+    padding: 70px 0;
 }
 
 
 /* check out */
 
 .product-checkout-details .product-card > a {
-  padding-right: 20px;
+    padding-right: 20px;
 }
 
 .product-checkout-details .product-card .price {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 .product-checkout-details .product-card .media-object {
-  width: 80px;
+    width: 80px;
 }
 
 .product-checkout-details .product-card h4 {
-  font-weight: 400;
-  font-size: 14px;
-  color: #555;
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
 }
 
 .product-checkout-details .product-card .remove {
-  font-size: 12px;
-  cursor: pointer;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .product-checkout-details .discount-code {
-  border-top: 1px solid #dedede;
-  border-bottom: 1px solid #dedede;
-  margin: 20px 0 10px;
-  padding: 10px 0;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    margin: 20px 0 10px;
+    padding: 10px 0;
 }
 
 .product-checkout-details .discount-code p {
-  margin: 0;
+    margin: 0;
 }
 
 .product-checkout-details .discount-code p a {
-  font-weight: 400;
-  color: #555;
+    font-weight: 400;
+    color: #555;
 }
 
 .product-checkout-details .summary-prices {
-  border-style: solid;
-  border-color: #dedede;
-  border-width: 0px 0 1px 0;
-  padding-bottom: 10px;
+    border-style: solid;
+    border-color: #dedede;
+    border-width: 0px 0 1px 0;
+    padding-bottom: 10px;
 }
 
 .product-checkout-details .summary-prices li {
-  padding: 5px 0;
+    padding: 5px 0;
 }
 
 .product-checkout-details .summary-prices li span + span {
-  float: right;
+    float: right;
 }
 
 .product-checkout-details .summary-total {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .product-checkout-details .summary-total > span {
-  font-weight: 500;
-  font-size: 18px;
+    font-weight: 500;
+    font-size: 18px;
 }
 .product-checkout-details .summary-total span + span {
-  float: right;
+    float: right;
 }
 
 /*end checkout*/

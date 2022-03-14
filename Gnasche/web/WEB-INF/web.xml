@@ -16,6 +16,16 @@
         <servlet-name>TypeOfCategoryController</servlet-name>
         <url-pattern>/category</url-pattern>
     </servlet-mapping>
+    
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern></url-pattern>
+    </filter-mapping>    
+
+    <filter-mapping>
+        <filter-name>AuthorizationFilter</filter-name>
+        <url-pattern></url-pattern>
+    </filter-mapping>
     <session-config>
         <session-timeout>
             30
