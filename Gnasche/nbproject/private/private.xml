@@ -5,15 +5,18 @@
         <group>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/OrderDAO.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/ProductDAO.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/dashboard.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/compo/nav.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/checkout.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/login.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/CategoryDAO.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/model/Account.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/AdminServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/filter/AuthenticationFilter.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/HomeServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/admin.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/LoginServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/ManageServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/AccountDAO.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/DashboardServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/CheckoutServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/dashboard.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/AddCartServlet.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/allproducts.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/compo/header.jsp</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/ShopServlet.java</file>
         </group>
     </open-files>

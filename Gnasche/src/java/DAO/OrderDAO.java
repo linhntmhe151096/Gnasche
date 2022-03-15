@@ -61,7 +61,7 @@ public class OrderDAO {
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) {
+           while (rs.next()) {
                 Order order = Order.builder()
                         .id(rs.getInt(1))
                         .accountId(rs.getInt(2))

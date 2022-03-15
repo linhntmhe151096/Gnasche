@@ -107,4 +107,50 @@ public class ProductDAO {
         return null;
 
     }
+
+    public void deleteProduct(int productid) {
+        String sql = "delete from Product where id = ?";
+        try {
+
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setInt(1, productid);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public void addProduct(String name, int quantity, Double price, String descrip,
+            String image, String date, String cate, int subid) {
+        String sql = "INSERT INTO [Decor].[dbo].[Product]\n"
+                + "           ([name]\n"
+                + "           ,[quantity]\n"
+                + "           ,[price]\n"
+                + "           ,[description]\n"
+                + "           ,[image_url]\n"
+                + "           ,[created_date]\n"
+                + "           ,[category_id]\n"
+                + "           ,[subcategory_int])\n"
+                + "     VALUES\n"
+                + "           (?,?,?,?,?,?,?,?)";
+        
+        try {
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setInt(2, quantity);
+            ps.setDouble(3, price);
+            ps.setString(4, descrip);
+            ps.setString(5, image);
+            ps.setString(6, date);
+            ps.setString(7, cate);
+            ps.setInt(8, subid);
+            ps.executeUpdate();
+            
+        } catch (Exception e) {
+        }
+    }
+
+    
 }
