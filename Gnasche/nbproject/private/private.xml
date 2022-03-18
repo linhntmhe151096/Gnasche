@@ -4,17 +4,20 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/ProductDAO.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/Management/DeleteCRUD.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/CheckoutServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/inforproduct.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/Management/InforProductServlet.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/CRUD.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/dashboard.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/OrderDetailDAO.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/checkout.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/Management/EditCRUD.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/Management/DashboardServlet.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/addproduct.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/ShopServlet.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/Management/AddCRUDServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/admin.jsp</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/Management/CRUDServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/CheckoutServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/dashboard.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/DetailServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/Management/AddCRUDServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/detail.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/AddCartServlet.java</file>
         </group>
     </open-files>
 </project-private>

@@ -8,10 +8,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+    
         <%@include file="compo/header.jsp" %>
-    </head>
-    <body>
+      <body>
         <%@include file="compo/navCrud.jsp" %>
 
         <div class="container tm-mt-big tm-mb-big">
@@ -32,13 +31,13 @@
                                     </div>
                                     <div class="form-group mb-3">
                                         <label>Description</label>
-                                        <input name="description"class="form-control validate" rows="3" required />
+                                        <textarea name="description" class="form-control validate" rows="3" required></textarea>
                                     </div>
                                     <div class="form-group mb-3">
                                         <label>Category</label>
                                         <select class="custom-select tm-select-accounts" name="category">
 
-<!--                                            <option selected>Select category</option>-->
+                                            <option selected>Select category</option>
                                             <c:forEach items="${listCategorys}" var="c">
 
                                                 <option value="${c.id}">${c.name}</option>

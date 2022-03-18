@@ -5,26 +5,21 @@
  */
 package controller.Management;
 
-import DAO.CategoryDAO;
 import DAO.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Category;
-import model.Product;
-import model.Shipping;
 
 /**
  *
  * @author Admin
  */
-@WebServlet(name = "AddCRUDServlet", urlPatterns = {"/add-product"})
-public class AddCRUDServlet extends HttpServlet {
+@WebServlet(name = "EditCRUD", urlPatterns = {"/edit-product"})
+public class EditCRUD extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,11 +35,15 @@ public class AddCRUDServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            List<Category> listCategory = new CategoryDAO().getAllCategory();
-            //List<Product> listProducts = new ProductDAO().getALLProducts();
-            request.setAttribute("listCategorys", listCategory);
-            // request.setAttribute("listProducts", listProducts);
-            request.getRequestDispatcher("addproduct.jsp").forward(request, response);
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet EditCRUD</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet EditCRUD at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -74,6 +73,7 @@ public class AddCRUDServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String descrip = request.getParameter("description");
         String cate = (String) request.getParameter("category");
@@ -82,11 +82,11 @@ public class AddCRUDServlet extends HttpServlet {
         String date = (String) request.getParameter("date");
         String image = request.getParameter("image");
         int subid = Integer.parseInt(request.getParameter("subid"));
-//       
-        ProductDAO insert = new ProductDAO();
-        insert.addProduct(name, quantity, price, descrip, image, date, cate, subid);
+   
+        ProductDAO edit = new ProductDAO();
+        edit.updateProduct(id,name,quantity,price,descrip,image,date,cate,subid);
         response.sendRedirect("products");
-
+        
     }
 
     /**

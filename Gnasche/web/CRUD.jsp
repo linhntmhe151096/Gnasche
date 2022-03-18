@@ -18,7 +18,7 @@
                         <div class="tm-product-table-container">
                             <table class="table table-hover tm-table-small tm-product-table">
                                 <thead>
-                                    <tr>
+                                    <tr style="font-size: 15px; color: black;">
                                         <th scope="col">&nbsp;</th>
                                         <th scope="col">ID</th>
                                         <th scope="col">PRODUCT NAME</th>
@@ -34,7 +34,7 @@
                                     
                                         <th scope="row"><input type="checkbox" /></th>
                                         <td>${pro.id}</td>
-                                        <td class="tm-product-name">${pro.name}</td>
+                                        <td class="tm-product-name"><a href="info?productId=${pro.id}">${pro.name}</a></td>
                                         <td>1,450</td>
                                         <td>550</td>
                                         <td>${pro.createdDate}</td>
@@ -70,6 +70,7 @@
                                     <tr>
                                         <td class="tm-product-name">${C.name}</td>
                                         <td class="text-center">
+                                            
                                             <a href="delete" class="tm-product-delete-link">
                                                 <i class="far fa-trash-alt tm-product-delete-icon"></i>
                                             </a>

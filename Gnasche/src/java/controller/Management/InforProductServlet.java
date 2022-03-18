@@ -17,14 +17,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Category;
 import model.Product;
-import model.Shipping;
 
 /**
  *
  * @author Admin
  */
-@WebServlet(name = "AddCRUDServlet", urlPatterns = {"/add-product"})
-public class AddCRUDServlet extends HttpServlet {
+@WebServlet(name = "InforProductServlet", urlPatterns = {"/info"})
+public class InforProductServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,11 +39,14 @@ public class AddCRUDServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            int productId = Integer.parseInt(request.getParameter("productId"));
             List<Category> listCategory = new CategoryDAO().getAllCategory();
-            //List<Product> listProducts = new ProductDAO().getALLProducts();
+            Product product = new ProductDAO().getProductById(productId);
+            request.setAttribute("p", product);
             request.setAttribute("listCategorys", listCategory);
-            // request.setAttribute("listProducts", listProducts);
-            request.getRequestDispatcher("addproduct.jsp").forward(request, response);
+           
+            
+            request.getRequestDispatcher("inforproduct.jsp").forward(request, response);
         }
     }
 
@@ -74,19 +76,7 @@ public class AddCRUDServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String descrip = request.getParameter("description");
-        String cate = (String) request.getParameter("category");
-        double price = Double.parseDouble(request.getParameter("price"));
-        int quantity = Integer.parseInt(request.getParameter("stock"));
-        String date = (String) request.getParameter("date");
-        String image = request.getParameter("image");
-        int subid = Integer.parseInt(request.getParameter("subid"));
-//       
-        ProductDAO insert = new ProductDAO();
-        insert.addProduct(name, quantity, price, descrip, image, date, cate, subid);
-        response.sendRedirect("products");
-
+        processRequest(request, response);
     }
 
     /**

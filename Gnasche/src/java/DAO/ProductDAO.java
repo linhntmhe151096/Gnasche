@@ -134,7 +134,7 @@ public class ProductDAO {
                 + "           ,[subcategory_int])\n"
                 + "     VALUES\n"
                 + "           (?,?,?,?,?,?,?,?)";
-        
+
         try {
             Connection conn = new DBContext().getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -147,10 +147,38 @@ public class ProductDAO {
             ps.setString(7, cate);
             ps.setInt(8, subid);
             ps.executeUpdate();
-            
+
         } catch (Exception e) {
         }
     }
 
-    
+    public void updateProduct(int id, String name, int quantity, double price, String descrip, String image, String date, String cate, int subid) {
+        String sql = "UPDATE [dbo].[Product]\n"
+                + "   SET [name] = ?\n"
+                + "      ,[quantity] = ?\n"
+                + "      ,[price] = ?\n"
+                + "      ,[description] = ?\n"
+                + "      ,[image_url] = ?\n"
+                + "      ,[created_date] = ?\n"
+                + "      ,[category_id] = ?\n"
+                + "      ,[subcategory_int] = ?\n"
+                + " WHERE id =?";
+
+        try {
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setInt(2, quantity);
+            ps.setDouble(3, price);
+            ps.setString(4, descrip);
+            ps.setString(5, image);
+            ps.setString(6, date);
+            ps.setString(7, cate);
+            ps.setInt(8, subid);
+            ps.setInt(9, id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
 }

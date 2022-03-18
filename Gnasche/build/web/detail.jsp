@@ -97,7 +97,7 @@
                                 <div class="col-lg-6 col-12">
 
 
-                                    <a href="cart" class="btn custom-btn cart-btn">BUY NOW</a>
+                                    <a href="checkout?quantity=1&productId=${p.id}" class="btn custom-btn cart-btn">BUY NOW</a>
                                 </div>
 
                                 <div class="col-lg-6 col-12 mt-4 mt-lg-0">
