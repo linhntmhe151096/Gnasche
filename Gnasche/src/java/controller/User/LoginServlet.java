@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Account;
 
-
 /**
  *
  * @author Admin
@@ -42,7 +41,7 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Servlet LoginServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
@@ -63,32 +62,29 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         //Ktra ac luu cookie co hop le voi database hay khong
-        
         //Lay tat ca cookie tren trinh duyet
         Cookie[] cookies = request.getCookies();
         String username = null;
         String password = null;
         for (Cookie cooky : cookies) {
-            if(cooky.getName().equals("username")){
+            if (cooky.getName().equals("username")) {
                 username = cooky.getValue();
-            }
-            else if(cooky.getName().equals("password")){
+            } else if (cooky.getName().equals("password")) {
                 username = cooky.getValue();
-            }
-            else if(username != null && password != null){
+            } else if (username != null && password != null) {
                 break;
             }
         }
-        
-        if(username != null && password != null){
+
+        if (username != null && password != null) {
             Account account = new AccountDAO().AccountByUsernameAndPassword(username, password);
-            if(account != null){ //cookies hop le thi cho dang nhap
+            if (account != null) { //cookies hop le thi cho dang nhap
                 request.getSession().setAttribute("account", account);
                 return;
-               
-            }       
+
+            }
         }
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
@@ -107,35 +103,51 @@ public class LoginServlet extends HttpServlet {
         //Sign in
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-       boolean remember = request.getParameter("remember")!=null;
-        
+        boolean remember = request.getParameter("remember") != null;
+
         AccountDAO dao = new AccountDAO();
-        Account ac= dao.AccountByUsernameAndPassword(username, password);
-        
+        Account ac = dao.AccountByUsernameAndPassword(username, password);
+
         if (ac == null) {
             request.setAttribute("error", "Username or password is incorrect!");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         } else { //Hop le, luu tren session
-            HttpSession session = request.getSession();
-            session.setAttribute("account", ac);
-            if (remember) {
-                Cookie c_user = new Cookie("username", username);
-                Cookie c_pass = new Cookie("password", password);
-                
-                c_user.setMaxAge(3600 * 24 * 20);
-                c_pass.setMaxAge(3600 * 24 * 20);
-                //Luu tren trinh duyet may ng dung
-                response.addCookie(c_pass); 
-                response.addCookie(c_user);
-              
+
+            if (ac.getRole().equals(Account.ADMIN)) {
+
+                HttpSession session = request.getSession();
+                session.setAttribute("account", ac);
+                if (remember) {
+                    Cookie c_user = new Cookie("username", username);
+                    Cookie c_pass = new Cookie("password", password);
+
+                    c_user.setMaxAge(3600 * 24 * 20);
+                    c_pass.setMaxAge(3600 * 24 * 20);
+                    //Luu tren trinh duyet may ng dung
+                    response.addCookie(c_pass);
+                    response.addCookie(c_user);
+
+                }
+                response.sendRedirect("admin/dashboard");
+            } else if(ac.getRole().equals(Account.USER)) {                
+                HttpSession session = request.getSession();
+                session.setAttribute("account", ac);
+                if (remember) {
+                    Cookie c_user = new Cookie("username", username);
+                    Cookie c_pass = new Cookie("password", password);
+
+                    c_user.setMaxAge(3600 * 24 * 20);
+                    c_pass.setMaxAge(3600 * 24 * 20);
+                    //Luu tren trinh duyet may ng dung
+                    response.addCookie(c_pass);
+                    response.addCookie(c_user);
+
+                }
+                response.sendRedirect("home");
             }
 
-            response.sendRedirect("home");
         }
 
-        
-                
-        
     }
 
     /**

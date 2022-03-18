@@ -22,7 +22,7 @@ import model.Order;
  *
  * @author Admin
  */
-@WebServlet(name = "DashboardServlet", urlPatterns = {"/dashboard"})
+@WebServlet(name = "DashboardServlet", urlPatterns = {"/admin/dashboard"})
 public class DashboardServlet extends HttpServlet {
 
     /**
@@ -44,7 +44,7 @@ public class DashboardServlet extends HttpServlet {
             OrderDAO odb = new OrderDAO();
             List<Order> listOrder = odb.getAllOrder();
             request.setAttribute("olist", listOrder);
-            request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+            request.getRequestDispatcher("../dashboard.jsp").forward(request, response);
         }
     }
 

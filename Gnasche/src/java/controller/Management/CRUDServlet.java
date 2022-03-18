@@ -22,7 +22,7 @@ import model.Product;
  *
  * @author Admin
  */
-@WebServlet(name = "CRUDServlet", urlPatterns = {"/products"})
+@WebServlet(name = "CRUDServlet", urlPatterns = {"/admin/products"})
 public class CRUDServlet extends HttpServlet {
 
     /**
@@ -44,7 +44,7 @@ public class CRUDServlet extends HttpServlet {
             request.setAttribute("listCategory", listCategory);
             request.setAttribute("listProducts", listProducts);
             
-            request.getRequestDispatcher("CRUD.jsp").forward(request, response);
+            request.getRequestDispatcher("../CRUD.jsp").forward(request, response);
 
         }
     }

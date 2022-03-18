@@ -83,7 +83,7 @@
                                             Sign in
                                         </button>
 
-                                        <p class="text-center">Don’t have an account? <a href="signin">Create One</a></p>
+                                        <p class="text-center">Don’t have an account? <a href="login">Create One</a></p>
 
                                     </form>
                                 </div>

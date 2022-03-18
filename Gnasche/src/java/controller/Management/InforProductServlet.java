@@ -22,7 +22,7 @@ import model.Product;
  *
  * @author Admin
  */
-@WebServlet(name = "InforProductServlet", urlPatterns = {"/info"})
+@WebServlet(name = "InforProductServlet", urlPatterns = {"/admin/info"})
 public class InforProductServlet extends HttpServlet {
 
     /**
@@ -46,7 +46,7 @@ public class InforProductServlet extends HttpServlet {
             request.setAttribute("listCategorys", listCategory);
            
             
-            request.getRequestDispatcher("inforproduct.jsp").forward(request, response);
+            request.getRequestDispatcher("../inforproduct.jsp").forward(request, response);
         }
     }
 

@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Admin
  */
-@WebServlet(name = "EditCRUD", urlPatterns = {"/edit-product"})
+@WebServlet(name = "EditCRUD", urlPatterns = {"/admin/edit-product"})
 public class EditCRUD extends HttpServlet {
 
     /**
@@ -85,7 +85,7 @@ public class EditCRUD extends HttpServlet {
    
         ProductDAO edit = new ProductDAO();
         edit.updateProduct(id,name,quantity,price,descrip,image,date,cate,subid);
-        response.sendRedirect("products");
+        response.sendRedirect("admin/products");
         
     }
 

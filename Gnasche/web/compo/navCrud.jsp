@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto h-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="dashboard">
+                    <a class="nav-link" href="admin/dashboard">
                         <i class="fas fa-tachometer-alt"></i> Dashboard
                         <span class="sr-only">(current)</span>
                     </a>
@@ -39,7 +39,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="products">
+                    <a class="nav-link" href="http://localhost:8080/Gnasche/admin/products">
                         <i class="fas fa-shopping-cart"></i>
                         Products
                     </a>
@@ -62,7 +62,7 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link d-block" href="login">
+                    <a class="nav-link d-block" href="http://localhost:8080/Gnasche/login">
                         Admin, <b>Logout</b>
                     </a>
                 </li>

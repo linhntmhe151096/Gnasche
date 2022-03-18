@@ -23,7 +23,7 @@ import model.Shipping;
  *
  * @author Admin
  */
-@WebServlet(name = "AddCRUDServlet", urlPatterns = {"/add-product"})
+@WebServlet(name = "AddCRUDServlet", urlPatterns = {"/admin/add-product"})
 public class AddCRUDServlet extends HttpServlet {
 
     /**
@@ -44,7 +44,7 @@ public class AddCRUDServlet extends HttpServlet {
             //List<Product> listProducts = new ProductDAO().getALLProducts();
             request.setAttribute("listCategorys", listCategory);
             // request.setAttribute("listProducts", listProducts);
-            request.getRequestDispatcher("addproduct.jsp").forward(request, response);
+            request.getRequestDispatcher("../addproduct.jsp").forward(request, response);
         }
     }
 

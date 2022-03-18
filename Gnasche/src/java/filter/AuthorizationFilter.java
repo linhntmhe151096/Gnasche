@@ -104,21 +104,22 @@ public class AuthorizationFilter implements Filter {
             FilterChain chain)
             throws IOException, ServletException {
         
-//        HttpServletRequest req = (HttpServletRequest) request;
-//        HttpServletResponse res = (HttpServletResponse) response;
-//
-//        HttpSession session = req.getSession();
-//        //Check login
-//
-//        Account account = (Account) session.getAttribute("account");
-//        if (account != null && account.getRole().equals(Account.Admin)) {//neu tk la admin
-//            chain.doFilter(request, response); //cho qua
-//           
-//            return;
-//        }
-//       // req.setAttribute("error", "You are not permission");
-//       // req.getRequestDispatcher("login.jsp").forward(request, response);
-//       res.sendRedirect("http://localhost:8080/Gnasche/login");
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
+
+        HttpSession session = req.getSession();
+        //Check login
+
+        Account account = (Account) session.getAttribute("account");
+        if (account != null && account.getRole().equals(Account.ADMIN)) {//neu tk la admin
+            chain.doFilter(request, response); //cho qua
+            return;
+    
+        }
+//        req.setAttribute("error", "You are not permission");
+//        req.getRequestDispatcher("login.jsp").forward(request, response);
+       res.sendRedirect("http://localhost:8080/Gnasche/login");
+        
     }
 
     /**

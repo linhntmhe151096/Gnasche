@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Admin
  */
-@WebServlet(name = "DeleteCRUD", urlPatterns = {"/delete"})
+@WebServlet(name = "DeleteCRUD", urlPatterns = {"/admin/delete"})
 public class DeleteCRUD extends HttpServlet {
 
     /**
@@ -39,7 +39,7 @@ public class DeleteCRUD extends HttpServlet {
             int productid = Integer.parseInt(request.getParameter("productId"));
             ProductDAO delete = new ProductDAO();
             delete.deleteProduct(productid);
-            response.sendRedirect("products");
+            response.sendRedirect("admin/products");
         }
     }
 

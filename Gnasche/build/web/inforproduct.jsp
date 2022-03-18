@@ -22,7 +22,7 @@
                         </div>
                         <div class="row tm-edit-product-row">
                             <div class="col-xl-6 col-lg-6 col-md-12">
-                                <form action="edit-product" method="post" class="tm-edit-product-form">
+                                <form action="admin/edit-product" method="post" class="tm-edit-product-form">
                                     <div class="form-group mb-3">
                                         <div class="form-group mb-3">
                                             <label>Product ID</label>

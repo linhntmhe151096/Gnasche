@@ -60,8 +60,8 @@
 
                             <div class="col-lg-10 col-12">
                                 <c:choose>
-                                    <c:when test="${sessionScope.account.role =='admin'}">
-                                        <a href="dashboard"> View Dashboard</a>
+                                    <c:when test="${sessionScope.account.role =='ADMIN'}">
+                                        <a href="admin/dashboard"> View Dashboard</a>
                                     </c:when>
                                     <c:otherwise>
 

@@ -34,12 +34,12 @@
                                     
                                         <th scope="row"><input type="checkbox" /></th>
                                         <td>${pro.id}</td>
-                                        <td class="tm-product-name"><a href="info?productId=${pro.id}">${pro.name}</a></td>
+                                        <td class="tm-product-name"><a href="admin/info?productId=${pro.id}">${pro.name}</a></td>
                                         <td>1,450</td>
                                         <td>550</td>
                                         <td>${pro.createdDate}</td>
                                         <td>
-                                            <a href="delete?productId=${pro.id}" class="tm-product-delete-link">
+                                            <a href="admin/delete?productId=${pro.id}" class="tm-product-delete-link">
                                                 <i class="far fa-trash-alt tm-product-delete-icon"></i>
                                             </a>
                                         </td>
@@ -52,7 +52,7 @@
                         </div>
                         <!-- table container -->
                         <a
-                            href="add-product"
+                            href="admin/add-product"
                             class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
                         <button class="btn btn-primary btn-block text-uppercase">
                             Delete selected products
@@ -71,7 +71,7 @@
                                         <td class="tm-product-name">${C.name}</td>
                                         <td class="text-center">
                                             
-                                            <a href="delete" class="tm-product-delete-link">
+                                            <a href="admin/delete" class="tm-product-delete-link">
                                                 <i class="far fa-trash-alt tm-product-delete-icon"></i>
                                             </a>
                                         </td>
