@@ -665,13 +665,13 @@
                         </select> </div>
 
 
-                    <form action="">
+                    <form action="search">
                         <div class="input-group" style="padding-top: 15px;margin-right: 80px;margin-left: 100px;border-radius: 3px; height: 15px;">
-                            <input type="text" class="form-control" placeholder="Search for products">
+                            <input type="text" name="keyword" class="form-control" placeholder="Search for products">
                             <div class="input-group-append">
-                                <span class="input-group-text bg-transparent text-primary">
+                                <button type="submit"class="input-group-text bg-transparent text-primary">
                                     <i class="fa fa-search"></i>
-                                </span>
+                                </button>
                             </div>
                         </div>
                     </form>

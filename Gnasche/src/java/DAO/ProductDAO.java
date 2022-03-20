@@ -241,4 +241,34 @@ public class ProductDAO {
         return 0;
     }
 
+    public List<Product> search(String keyword) {
+        List<Product> listPro = new ArrayList<>();
+        try {
+            String sql = "select * from Product where name like ?";
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1,"%"+keyword+"%");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                
+                Product product = Product.builder()
+                        .id(rs.getInt(1))
+                        .name(rs.getString(2))
+                        .quantity(rs.getInt(3))
+                        .price(rs.getDouble(4))
+                        .description(rs.getString(5))
+                        .imageUrl(rs.getString(6))
+                        .createdDate(rs.getString(7))
+                        .categoryId(rs.getInt(8))
+                        .subid(rs.getInt(9)).build();
+
+                listPro.add(product);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listPro;
+    }
+    
+
 }
