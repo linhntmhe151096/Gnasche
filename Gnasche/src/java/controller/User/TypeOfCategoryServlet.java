@@ -5,6 +5,7 @@
  */
 package controller.User;
 
+import DAO.CategoryDAO;
 import DAO.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Category;
 import model.Product;
 
 /**
@@ -36,7 +38,10 @@ public class TypeOfCategoryServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             int categoryId = Integer.parseInt(request.getParameter("categoryId"));
+            List<Category> listCategory = new CategoryDAO().getAllCategory();
+      
             List<Product> listProducts = new ProductDAO().getProductByCategoryId(categoryId);
+            request.setAttribute("listCategory", listCategory);
             request.setAttribute("listProducts", listProducts);
 
             request.getRequestDispatcher("allproducts.jsp").forward(request, response);

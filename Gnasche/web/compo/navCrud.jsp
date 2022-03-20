@@ -9,7 +9,7 @@
 <nav class="navbar navbar-expand-xl">
     <div class="container h-100">
         <a class="navbar-brand" href="index.html">
-            <h2 class="tm-site-title mb-0">Admin page</h2>
+            <h2 class="tm-site-title mb-0">Admin <i class="bi bi-emoji-wink"></i></h2>
         </a>
         <button
             class="navbar-toggler ml-auto mr-0"
@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto h-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="admin/dashboard">
+                    <a class="nav-link" href="http://localhost:8080/Gnasche/admin/dashboard">
                         <i class="fas fa-tachometer-alt"></i> Dashboard
                         <span class="sr-only">(current)</span>
                     </a>
@@ -53,9 +53,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="accounts.html">
-                        <i class="fas fa-cog"></i>
-                        Settings
+                    <a class="nav-link" href="http://localhost:8080/Gnasche/home">
+                     <i class="bi bi-eye-fill"></i>
+                        Gnasche
                     </a>
                 </li>
 

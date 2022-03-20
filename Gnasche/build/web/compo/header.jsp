@@ -26,8 +26,8 @@
         <link href="/Gnasche/css/bootstrap-icons.css" rel="stylesheet">
         
 
-        <link rel="stylesheet" href="css/slick.css"/>
-        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="/Gnasche/css/slick.css"/>
+        <link rel="stylesheet" href="/Gnasche/css/style.css"/>
 
         <link href="/Gnasche/css/tooplate-little-fashion.css" rel="stylesheet">
     </head>

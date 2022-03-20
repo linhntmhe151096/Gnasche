@@ -33,6 +33,7 @@ public class OrderDetailDAO {
                     + "           ,[productImage]\n"
                     + "           ,[productPrice]\n"
                     + "           ,[quantity])\n"
+                    + "           ,[productId]\n"
                     + "     VALUES\n"
                     + "           (?,?,?,?,?)";
             Connection conn = new DBContext().getConnection();
@@ -46,6 +47,7 @@ public class OrderDetailDAO {
                 ps.setString(3, cart.getProduct().getImageUrl());
                 ps.setDouble(4, cart.getProduct().getPrice());
                 ps.setInt(5, cart.getQuantity());
+                ps.setInt(6, cart.getProduct().getId());
                 ps.executeUpdate();
                 
             }

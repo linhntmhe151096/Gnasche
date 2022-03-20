@@ -24,7 +24,7 @@
                         </div>
                         <div class="row tm-edit-product-row">
                             <div class="col-xl-6 col-lg-6 col-md-12">
-                                <form action="admin/add-product" method="post" class="tm-edit-product-form">
+                                <form action="add-product" method="post" class="tm-edit-product-form">
                                     <div class="form-group mb-3">
                                         <label>Product Name</label>
                                         <input name="name" type="text" class="form-control validate" required/>

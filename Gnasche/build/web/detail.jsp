@@ -51,7 +51,7 @@
 
             <%@include file="compo/nav.jsp" %>
 
-            <header class="site-header section-padding d-flex justify-content-center align-items-center">
+<!--            <header class="site-header section-padding d-flex justify-content-center align-items-center">
                 <div class="container">
                     <div class="row">
 
@@ -63,7 +63,9 @@
                         </div>
                     </div>
                 </div>
-            </header>
+            </header>-->
+
+
 
             <section class="product-detail section-padding">
                 <div class="container">
@@ -120,10 +122,10 @@
                             <h3 class="mb-5">You might also like</h3>
                         </div>
 
-                        <div class="col-lg-4 col-12 mb-3">
+                        <div class="col-lg-3 col-12 mb-3">
                             <div class="product-thumb">
                                 <a href="product-detail.html">
-                                    <img src="images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg" class="img-fluid product-image" alt="">
+                                    <img src="https://st.hzcdn.com/fimgs/6941f2350f08f307_3199-w200-h200-b1-p0--.jpg" class="img-fluid product-image" alt="">
                                 </a>
 
                                 <div class="product-top d-flex">
@@ -146,10 +148,10 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-12 mb-3">
+                        <div class="col-lg-3 col-12 mb-3">
                             <div class="product-thumb">
                                 <a href="product-detail.html">
-                                    <img src="images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg" class="img-fluid product-image" alt="">
+                                    <img src="https://st.hzcdn.com/fimgs/5b41ec000939a60e_9869-w200-h200-b1-p0--.jpg" class="img-fluid product-image" alt="">
                                 </a>
 
                                 <div class="product-top d-flex">
@@ -161,7 +163,7 @@
                                 <div class="product-info d-flex">
                                     <div>
                                         <h5 class="product-title mb-0">
-                                            <a href="product-detail.html" class="product-title-link">Fashion set</a>
+                                            <a href="product-detail.html" class="product-title-link">Large LED Lighted</a>
                                         </h5>
 
                                         <p class="product-p">Costume package</p>
@@ -172,10 +174,10 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-12">
+                        <div class="col-lg-3 col-12">
                             <div class="product-thumb">
                                 <a href="product-detail.html">
-                                    <img src="images/product/nature-zen-3Dn1BZZv3m8-unsplash.jpeg" class="img-fluid product-image" alt="">
+                                    <img src="https://st.hzcdn.com/fimgs/fe0136ac0dbc1822_5359-w200-h200-b1-p0--.jpg" class="img-fluid product-image" alt="">
                                 </a>
 
                                 <div class="product-top d-flex">
@@ -185,7 +187,30 @@
                                 <div class="product-info d-flex">
                                     <div>
                                         <h5 class="product-title mb-0">
-                                            <a href="product-detail.html" class="product-title-link">Juice Drinks</a>
+                                            <a href="product-detail.html" class="product-title-link">Astra 12-Light</a>
+                                        </h5>
+
+                                        <p class="product-p">Nature made another world</p>
+                                    </div>
+
+                                    <small class="product-price text-muted ms-auto mt-auto mb-5">$45</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-12">
+                            <div class="product-thumb">
+                                <a href="product-detail.html">
+                                    <img src="https://st.hzcdn.com/fimgs/2e4143150ea3213b_9835-w200-h200-b1-p0--.jpg" class="img-fluid product-image" alt="">
+                                </a>
+
+                                <div class="product-top d-flex">
+                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
+                                </div>
+
+                                <div class="product-info d-flex">
+                                    <div>
+                                        <h5 class="product-title mb-0">
+                                            <a href="product-detail.html" class="product-title-link">Uttermost Road Less</a>
                                         </h5>
 
                                         <p class="product-p">Nature made another world</p>

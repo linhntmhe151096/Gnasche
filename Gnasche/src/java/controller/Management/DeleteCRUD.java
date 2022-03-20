@@ -39,7 +39,7 @@ public class DeleteCRUD extends HttpServlet {
             int productid = Integer.parseInt(request.getParameter("productId"));
             ProductDAO delete = new ProductDAO();
             delete.deleteProduct(productid);
-            response.sendRedirect("admin/products");
+            response.sendRedirect("http://localhost:8080/Gnasche/admin/products");
         }
     }
 

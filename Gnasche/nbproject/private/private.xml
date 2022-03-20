@@ -3,16 +3,29 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/OrderDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/inforproduct.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/ProductDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/CRUD.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/cart.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/OrderDetailDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/addproduct.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/CategoryDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/CartServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/DAO/AccountDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/css/style.css</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/compo/navCrud.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/dashboard.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/confirmation.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/HomeServlet.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/filter/AuthenticationFilter.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/Management/DashboardServlet.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/filter/AuthorizationFilter.java</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/LoginServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/css/tooplate-little-fashion.css</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/CheckoutServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/css/style_1.css</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/compo/nav.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/ShopServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/Management/AddCRUDServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/detail.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/controller/User/AddCartServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/model/OrderDetail.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/src/java/model/Account.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/allproducts.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/GitHub/Gnasche/Gnasche/web/compo/header.jsp</file>
         </group>
     </open-files>
 </project-private>

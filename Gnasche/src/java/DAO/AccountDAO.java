@@ -40,7 +40,8 @@ public class AccountDAO {
                         .address(rs.getString(5))
                         .email(rs.getString(6))
                         .phone(rs.getString(7))
-                        .role(rs.getString(8)).build();
+                        .role(rs.getString(8))
+                        .image(rs.getString(9)).build();
                         
                 return ac;
                 

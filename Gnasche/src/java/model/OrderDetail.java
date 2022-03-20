@@ -25,4 +25,5 @@ public class OrderDetail {
      private String productImage;
      private double productPrice;
      private int quantity;
+     private int productId;
 }

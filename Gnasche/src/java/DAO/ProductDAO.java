@@ -181,4 +181,64 @@ public class ProductDAO {
         }
     }
 
+    public List<Product> getListByPage(List<Product> listP, int start, int end) {
+        List<Product> list = new ArrayList<>();
+        for (int i = start; i < end; i++) {
+            list.add(listP.get(i));
+        }
+        return list;
+    }
+
+    public List<Product> getProductByPage(int page, int PAGE_SIZE) {
+        List<Product> listPro = new ArrayList<>();
+        try {
+            String sql = "SELECT * from  (select *, ROW_NUMBER() over (order by id asc) as row_num from Product) as product\n"
+                    + " where row_num >= (?-1)*?+1 and row_num <= ?*?";
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, page);
+            ps.setInt(2,PAGE_SIZE);
+            ps.setInt(3, page);
+            ps.setInt(4,PAGE_SIZE);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                //   Category category = new Category(rs.getInt(1), rs.getString(2));
+                Product product = Product.builder()
+                        .id(rs.getInt(1))
+                        .name(rs.getString(2))
+                        .quantity(rs.getInt(3))
+                        .price(rs.getDouble(4))
+                        .description(rs.getString(5))
+                        .imageUrl(rs.getString(6))
+                        .createdDate(rs.getString(7))
+                        .categoryId(rs.getInt(8))
+                        .subid(rs.getInt(9)).build();
+
+                listPro.add(product);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listPro;
+
+    }
+    
+    public int countTotalProducts() {
+        
+        try {
+            String sql = "select COUNT(id) from Product";
+            Connection conn = new DBContext().getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                //   Category category = new Category(rs.getInt(1), rs.getString(2));
+               return rs.getInt(1);
+                
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(ProductDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+
 }

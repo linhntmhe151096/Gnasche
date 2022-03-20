@@ -34,6 +34,9 @@ https://www.tooplate.com/view/2127-little-fashion
 }
 
 /*cònfirm*/
+
+
+
 .page-wrapper {
     padding: 70px 0;
 }
@@ -125,7 +128,7 @@ https://www.tooplate.com/view/2127-little-fashion
 .maima{
     list-style: none;
 }
-/* .navbar a i, .navbar a:focus i {
+/* .bar a i, .navbar a:focus i {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
@@ -142,6 +145,7 @@ https://www.tooplate.com/view/2127-little-fashion
 .cart {
     position: relative;
     padding-right: 20px;
+    
 }
 
 .cart-badge {
@@ -994,7 +998,7 @@ strong {
 
 .navbar-brand {
     color: var(--dark-color);
-    font-size: 24px;
+    font-size: 26px;
     font-weight: var(--font-weight-light);
     margin: 0;
     padding: 0;
@@ -1009,7 +1013,7 @@ strong {
 
 .nav-link {
     color: var(--p-color);
-    font-size: 16px;
+    font-size: 17px;
     position: relative;
 }
 
@@ -1567,6 +1571,9 @@ button:focus:not(:focus-visible) {
 .product-title-link {
     color: var(--dark-color);
 }
+/*. h4 a link {
+    color: var(--dark-color);
+}*/
 
 .product-additional-link {
     display: inline-block;

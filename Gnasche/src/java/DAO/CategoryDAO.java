@@ -32,7 +32,8 @@ public class CategoryDAO {//thao tac voi bang category
              //   Category category = new Category(rs.getInt(1), rs.getString(2));
              Category category = Category.builder()
                      .id(rs.getInt(1))
-                     .name(rs.getString(2)).build();
+                     .name(rs.getString(2))
+                     .imageUrl(rs.getString(3)).build();
                 listCate.add(category);
             }
         } catch (Exception ex) {

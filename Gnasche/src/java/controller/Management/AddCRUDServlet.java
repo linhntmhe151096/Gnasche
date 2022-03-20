@@ -85,7 +85,7 @@ public class AddCRUDServlet extends HttpServlet {
 //       
         ProductDAO insert = new ProductDAO();
         insert.addProduct(name, quantity, price, descrip, image, date, cate, subid);
-        response.sendRedirect("products");
+        response.sendRedirect("http://localhost:8080/Gnasche/admin/products");
 
     }
 

@@ -85,7 +85,7 @@ public class EditCRUD extends HttpServlet {
    
         ProductDAO edit = new ProductDAO();
         edit.updateProduct(id,name,quantity,price,descrip,image,date,cate,subid);
-        response.sendRedirect("admin/products");
+        response.sendRedirect("http://localhost:8080/Gnasche/admin/products");
         
     }
 

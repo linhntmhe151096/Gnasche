@@ -41,11 +41,31 @@ public class ShopServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
 //            String cateid = request.getParameter("cateid");
             List<Category> listCategory = new CategoryDAO().getAllCategory();
-        List<Product> listProducts = new ProductDAO().getALLProducts();
-        request.setAttribute("listCategory", listCategory);
-        request.setAttribute("listProducts", listProducts);
+//        List<Product> listProducts = new ProductDAO().getALLProducts();
         
+        int page;
+        final int PAGE_SIZE = 6;
+        
+       
+        String pageStr = request.getParameter("page");
+        if(pageStr!=null){
+            page= Integer.parseInt(pageStr);
+        }else {
+            page=1;
+        }
+        ProductDAO dao = new ProductDAO();
+        List<Product> listProducts =dao.getProductByPage(page,PAGE_SIZE);
+       int totalProduct=dao.countTotalProducts();
+       int totalPage = totalProduct/PAGE_SIZE;
+       if(totalProduct%PAGE_SIZE != 0){
+           totalPage+=1;
+       }
+        request.setAttribute("totalPage", totalPage);
+       
+        request.setAttribute("listProducts", listProducts);
+        request.setAttribute("listCategory", listCategory);
         request.getSession().setAttribute("oldUrl","shop");
+        request.setAttribute("page", page);
         request.getRequestDispatcher("allproducts.jsp").forward(request, response);
         }
     }

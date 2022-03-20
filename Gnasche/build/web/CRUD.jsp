@@ -8,6 +8,29 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
+    <style>
+        .tm-block-scroll {
+            overflow-y: scroll;
+        }
+        .tm-product-table-container {
+            max-height: 465px;
+            margin-bottom: 15px;
+            overflow-y: scroll;
+
+            ::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: gainsboro;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: gray;
+            }
+
+        }
+    </style>
     <%@include file="compo/header.jsp" %>
     <body>
         <%@include file="compo/navCrud.jsp" %>
@@ -28,35 +51,39 @@
                                         <th scope="col">&nbsp;</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-                                        <c:forEach items="${listProducts}" var="pro">
-                                    <tr>
-                                    
-                                        <th scope="row"><input type="checkbox" /></th>
-                                        <td>${pro.id}</td>
-                                        <td class="tm-product-name"><a href="admin/info?productId=${pro.id}">${pro.name}</a></td>
-                                        <td>1,450</td>
-                                        <td>550</td>
-                                        <td>${pro.createdDate}</td>
-                                        <td>
-                                            <a href="admin/delete?productId=${pro.id}" class="tm-product-delete-link">
-                                                <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                                        
-                                    
+                                    <c:forEach items="${listProducts}" var="pro">
+                                        <tr>
+
+                                            <th scope="row"><input type="checkbox" /></th>
+                                            <td>${pro.id}</td>
+                                            <td class="tm-product-name"><a href="http://localhost:8080/Gnasche/admin/info?productId=${pro.id}">${pro.name}</a></td>
+                                            <td>1,450</td>
+                                            <td>550</td>
+                                            <td>${pro.createdDate}</td>
+                                            <td>
+                                                <a href="http://localhost:8080/Gnasche/admin/delete?productId=${pro.id}" class="tm-product-delete-link">
+                                                    <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+
+
                                 </tbody>
                             </table>
+
                         </div>
+
                         <!-- table container -->
                         <a
-                            href="admin/add-product"
-                            class="btn btn-primary btn-block text-uppercase mb-3">Add new product</a>
-                        <button class="btn btn-primary btn-block text-uppercase">
-                            Delete selected products
-                        </button>
+                            href="http://localhost:8080/Gnasche/admin/add-product"
+                            class="btn btn-primary btn-block text-uppercase mb-3 " style=" background-color: black; 
+                            color: white;">Add new product</a>
+                        <!--                        <button class="btn btn-primary btn-block text-uppercase">
+                                                    Delete selected products
+                                                </button>-->
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 tm-block-col">
@@ -66,25 +93,25 @@
                             <table class="table tm-table-small tm-product-table">
                                 <tbody>
                                     <c:forEach items="${listCategory}" var="C">
-                                        
-                                    <tr>
-                                        <td class="tm-product-name">${C.name}</td>
-                                        <td class="text-center">
-                                            
-                                            <a href="admin/delete" class="tm-product-delete-link">
-                                                <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+
+                                        <tr>
+                                            <td class="tm-product-name">${C.name}</td>
+                                            <td class="text-center">
+
+                                                <a href="http://localhost:8080/Gnasche/admin/delete" class="tm-product-delete-link">
+                                                    <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     </c:forEach>
-                                    
-                                    
-                                    
+
+
+
                                 </tbody>
                             </table>
                         </div>
                         <!-- table container -->
-                        <button class="btn btn-primary btn-block text-uppercase mb-3">
+                        <button class="alo btn btn-primary btn-block text-uppercase mb-3" style=" background-color: black;color: white;">
                             Add new category
                         </button>
                     </div>
